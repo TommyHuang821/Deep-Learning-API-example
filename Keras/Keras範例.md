@@ -60,8 +60,8 @@ Hidden: 設 10 node且激活函數(activation function)為tanh</br>
     print('\nTesting ------------')
     cost = model.evaluate(X_test, Y_test)
     print('test cost:', cost)
-    Y_pred = model.predict(X_test) ## 算Test data從NN模型估計出來結果
-    X_pred = model.predict(X_train) ## 算Train data從NN模型估計出來結果
+    Y_pred = model.predict(X_test) 
+    X_pred = model.predict(X_train)
 
 *網路訓練完成後, 也可以將每一層的Weight的結果印出來看</br>  
 
