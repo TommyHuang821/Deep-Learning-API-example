@@ -1,31 +1,33 @@
-Keras 實作神經網路範例:
+# Keras 實作神經網路範例:
 
+# 用神經網路做回歸
+### import numpy, Keras, and matplotlib模組
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense
 import matplotlib.pyplot as plt # 畫圖用
 
-# create some data
+### 利用線性模型產生100筆資料 (其中60筆當train，40筆當test)
 X = np.linspace(-1, 1, 100)
 np.random.shuffle(X)    # randomize the data
 Y = 3 * X + 2 + np.random.normal(0, 0.05, (100, ))
-
-
 X_train, Y_train = X[:60], Y[:60]     # train 前 160 data points
 X_test, Y_test = X[60:], Y[60:]       # test 后 40 data points
 
- # build a neural network from the 1st layer to the last layer
+### 建立神經網路結構和參數 此範例為(Input→Hidden1→Output)
 model = Sequential()
-model.add(Dense(output_dim=10, input_dim=1))
-model.add(Dense(output_dim=1, input_dim=10, activation='linear'))
+model.add(Dense(output_dim=10, input_dim=1, activation='tanh'))  ## (input→Hidden1, 在Hidden 1的activation函數是tanh)
+model.add(Dense(output_dim=1, input_dim=10)) ## (Hidden1→Output)
 model.compile(loss='mse', optimizer='sgd') # choose loss function and optimizing method
 
+### 呈現training的cost的結果，每十次呈現一次，共跑1000次。
 print('Training -----------')
-for step in range(1001):
-    cost = model.train_on_batch(X_train, Y_train)
-    if step % 10 == 0:
-        print('train cost: ', cost)
-        
+for step in range(1000):
+    cost = model.train_on_batch(X_train, Y_train) # 神經網路用training data的learning在此步驟
+    if step % 10 == 0:
+        print('train cost: ', cost)
+
+### 
 print('\nTesting ------------')
 cost = model.evaluate(X_test, Y_test, batch_size=40)
 print('test cost:', cost)
