@@ -1,11 +1,11 @@
 # Python Keras 實作神經網路範例:
 ========================================================
 ### 用神經網路做回歸
-匯入numpy, Keras, and matplotlib模組
-    'import numpy as np'
-    'from keras.models import Sequential'
-    'from keras.layers import Dense'
-    'import matplotlib.pyplot as plt # 畫圖用'
+匯入numpy, Keras, and matplotlib模組</br>
+    import numpy as np
+    from keras.models import Sequential
+    from keras.layers import Dense
+    import matplotlib.pyplot as plt
 
 
 
