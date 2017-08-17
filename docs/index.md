@@ -9,11 +9,10 @@ Numpy用來產生資料用，Keras神經網路Module, matplotlib用來畫圖
     from keras.layers import Dense
     import matplotlib.pyplot as plt
     
-*利用線性模型產生100筆資料 (其中60筆當train，40筆當test)</br>
-主要是用numpy模組</br>
+*利用線性模型產生100筆資料 (其中60筆當train，40筆當test)，主要是用numpy模組</br>
 
-    X = np.linspace(-1, 1, 100)
-    np.random.shuffle(X)    # randomize the data
+    X = np.linspace(-1, 1, 100)
+    np.random.shuffle(X)    ## randomize the data
     Y = 3 * X + 2 + np.random.normal(0, 0.05, (100, ))
     X_train, Y_train = X[:60], Y[:60]     ## train 前 160 data points
     X_test, Y_test = X[60:], Y[60:]       ## test 后 40 data points
