@@ -1,11 +1,12 @@
-# Keras 實作神經網路範例:
-
+<h1> Python Keras 實作神經網路範例:</h1>
+========================================================
 # 用神經網路做回歸
-### import numpy, Keras, and matplotlib模組
-import numpy as np
-from keras.models import Sequential
-from keras.layers import Dense
-import matplotlib.pyplot as plt # 畫圖用
+### 匯入numpy, Keras, and matplotlib模組
+    import numpy as np
+				from keras.models import Sequential
+    from keras.layers import Dense
+    import matplotlib.pyplot as plt # 畫圖用
+
 
 
 ### 利用線性模型產生100筆資料 (其中60筆當train，40筆當test)
