@@ -1,10 +1,9 @@
 Keras 實作神經網路範例:
 
 import numpy as np
-np.random.seed(1337)  # for reproducibility
 from keras.models import Sequential
 from keras.layers import Dense
-import matplotlib.pyplot as plt # 可视化模块
+import matplotlib.pyplot as plt # 畫圖用
 
 # create some data
 X = np.linspace(-1, 1, 100)
