@@ -11,6 +11,7 @@ Numpy用來產生資料用，Keras神經網路Module, matplotlib用來畫圖
     
 *利用線性模型產生100筆資料 (其中60筆當train，40筆當test)</br>
 主要是用numpy模組</br>
+
     X = np.linspace(-1, 1, 100)
     np.random.shuffle(X)    # randomize the data
     Y = 3 * X + 2 + np.random.normal(0, 0.05, (100, ))
@@ -39,13 +40,15 @@ Hidden: 設 10 node且激活函數(activation function)為tanh</br>
             print('train cost: ', cost)
             
 *網路訓練完成後, 將測試資料帶入算cost的值</br>
+
     print('\nTesting ------------')
     cost = model.evaluate(X_test, Y_test)
     print('test cost:', cost)
     Y_pred = model.predict(X_test) # 算Test data從NN模型估計出來結果
     X_pred = model.predict(X_train) # 算Train data從NN模型估計出來結果
 
-*網路訓練完成後, 也可以將每一層的Weight的結果印出來看</br>    
+*網路訓練完成後, 也可以將每一層的Weight的結果印出來看</br>  
+
     W, b = model.layers[0].get_weights()
     print('Weights=', W, '\nbiases=', b)
 
@@ -55,6 +58,7 @@ Hidden: 設 10 node且激活函數(activation function)為tanh</br>
 * 畫兩張圖
 第一張train data的真實資料(藍色)，預測出來得結果(紅色)
 第一張test data的真實資料(藍色)，預測出來得結果(紅色)
+
     plt.subplot(211)
     plt.scatter(X_train, Y_train)
     plt.scatter(X_train, X_pred,color="r")
