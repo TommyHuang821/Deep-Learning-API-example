@@ -16,16 +16,23 @@ Numpy用來產生資料用，Keras神經網路Module, matplotlib用來畫圖
     X = np.linspace(-1, 1, 100)
     np.random.shuffle(X)    ## randomize the data
 
-case I: y=3*x+2
+case I (Linear): y=3*x+2
 
     Y = 3 * X + 2 + np.random.normal(0, 0.05, (100, ))
     
-case II: y=3*x^2+2
+case II (Square): y=3*x^2+2
 
     Y = 3 * X**2 + 2 + np.random.normal(0, 0.05, (100, ))
-
+    
     X_train, Y_train = X[:60], Y[:60]     ## train 前 160 data points
     X_test, Y_test = X[60:], Y[60:]       ## test 后 40 data points
+
+X軸是Input值(X_train)，Y軸是Output值(Y_train)，上面那張是training set，下面那張是testing set</br>
+Linear Case (Case I): </br>
+![alt tag](https://github.com/TommyHuang821/Note/blob/master/fig/RegressionCase_linear.png)</br>
+Square Case (Case II)</br>
+![alt tag](https://github.com/TommyHuang821/Note/blob/master/fig/RegressionCase_Square.png)</br>
+
 
 *建立神經網路結構和參數</br>
 此範例為 神經網路架構為 Input→Hidden1→Output</br>
@@ -74,5 +81,30 @@ Hidden: 設 10 node且激活函數(activation function)為tanh</br>
     plt.scatter(X_test, Y_test)
     plt.scatter(X_test, Y_pred,color="r")
     plt.show()
-    
+ 
+# 測試結果:</br>
+這邊我是兩種激活函數，第一種用Linear，第二種用relu。Hidden node都設100個，學習次數都設在10000次。</br>
+*X軸是Input值(X_train)，Y軸是Output值(Y_train)，上面那張是training set，下面那張是testing set</br>
+藍色的點是ground truth，紅色的點是預測出來的結果。</br>
+### Linear Case (Case I):</br>
+activation用Linear</br>
+![alt tag](https://github.com/TommyHuang821/Note/blob/master/fig/RegressionCase_linear_result_linear_10000.png)</br>
+activation用relu</br>
+![alt tag](https://github.com/TommyHuang821/Note/blob/master/fig/RegressionCase_linear_result_relu_10000.png)</br>
+
+### Square Case (Case II)</br>
+activation用Linear</br>
+![alt tag](https://github.com/TommyHuang821/Note/blob/master/fig/RegressionCase_Square_result_linear.png)</br>
+activation用relu</br>
+![alt tag](https://github.com/TommyHuang821/Note/blob/master/fig/RegressionCase_Square_result_relu_10000.png)</br>
+
+# 結論:
+這邊純粹先探討activation function，Hidden node個數不在討論範圍。</br>
+從範例的結果得知</br>
+當資料型態是線性(case I)的時候，在不論activation是線性(linear)或非線性(relu)，都可以神經網路都可以fit資料。</br>
+但是當資料型態轉變為非線性情況(case II)，activation是線性(linear)就不能將資料fit的很好，在非線性(relu)才能得到好的結果。</br>
+神經網路在第一個強項就在於非線性的activation，將資料從原始空間轉換到一個非線性的空間，讓模型可以更好去fit資料</br>
+但當activation是線性時，資料在Hidden layer計算時，資料依舊都是在原始維度的空間轉換，資料不論怎麼轉換依舊是原始空間的分佈。</br>
+
+
 
