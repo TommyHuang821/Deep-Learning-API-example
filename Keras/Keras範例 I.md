@@ -1,6 +1,11 @@
 # Python Keras 實作神經網路範例 I:
 ========================================================
 ### 用神經網路做回歸
+
+### [完整用神經網路做回歸範例原始碼](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/Keras/Main_Keras_regression.py) 
+
+以下細項簡單說明範例碼步驟:
+
 *匯入numpy, Keras, 和 matplotlib模組 </br>
 Numpy用來產生資料用，Keras神經網路Module, matplotlib用來畫圖
 
@@ -10,7 +15,6 @@ Numpy用來產生資料用，Keras神經網路Module, matplotlib用來畫圖
     import matplotlib.pyplot as plt
     
 *利用線性模型產生100筆資料 (其中60筆當train，40筆當test)，主要是用numpy模組</br>
-
 
 
     X = np.linspace(-1, 1, 100)
