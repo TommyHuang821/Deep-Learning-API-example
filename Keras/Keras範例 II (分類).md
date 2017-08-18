@@ -1,5 +1,9 @@
 # Python Keras 實作神經網路範例 II:
 ### 利用Keras建立神經網路進行Classification</br>
+
+### [完整用神經網路做分類範例原始碼](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/Keras/Main_Keras_classification.py) 
+
+
 * 範例資料庫: 手寫數字辨識資料庫((MNIST))，AI大神Yann LeCun的資料庫連結: http://yann.lecun.com/exdb/mnist/</br>
   如果你沒有去下載資料庫也沒有差，Keras裡面有幫你載好。</br>
 
