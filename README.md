@@ -26,3 +26,5 @@
 
 
 
+
+Note: Python 版本3.6.0,  TensorFlow 版本1.1.0,  Keras 版本 1.0.7,  numpy 版本 1.13.1
