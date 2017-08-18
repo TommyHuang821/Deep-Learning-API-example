@@ -16,9 +16,9 @@
 # 資料處理 (Python)
 1. [如何資料匯入資料到python](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/Data%20Process/loaddata.md)
 
-    1.1 簡單的方式是用numpy匯入資料
+    * 簡單的方式是用numpy匯入資料
    
-    1.2 若資料較為複雜則用open開啟檔案，然後加入判斷準則擷取資料。
+    * 若資料較為複雜則用open開啟檔案，然後加入判斷準則擷取資料。
    
         連結內有範例說明。
 
