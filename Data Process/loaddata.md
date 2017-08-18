@@ -1,5 +1,12 @@
-
 # 如何直接從txt檔或是csv檔直接匯入資料到python workspace</br>
+
+此教學會用到的檔案:</br>
+[txt檔](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/Data%20Process/RegressionExample.txt) </br>
+[csv檔](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/Data%20Process/sampledata.csv) </br>
+
+
+
+
 ### 1. 最簡單方式是用numpy module來幫助匯入資料:</br>
     
     import numpy as np 
