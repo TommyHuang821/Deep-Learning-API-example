@@ -97,11 +97,12 @@
         prediction = tf_ModelAdd_layer(h2, 100, 10,  activation_function=tf.nn.softmax)
    
    4. 宣告loss/cost function的型態 </br>
-   網路建構好之後，不同於Keras那種懶人包，你必須要自己宣告你最後要讓什麼目標函數最小或是最大化，也就是loss/cost函數你想用什麼，你可以自己定義</br>在分類問題上，我們依舊用cross-entropy來當作loss/cost function (the error between prediction and real data)</br>
+   網路建構好之後，不同於Keras那種懶人包，你必須要自己宣告你最後要讓什麼目標函數最小或是最大化，也就是loss/cost函數你想用什麼，你可以自己定義
+   </br>在分類問題上，我們依舊用cross-entropy來當作loss/cost function (the error between prediction and real data)</br>
       
-       <code>cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction), reduction_indices=[1]))</code>
-     
-   </br>
+       cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction), reduction_indices=[1]))
+
+   </br>
    5. Optimizer </br>
    這邊是看你要用什麼最佳化方法來達到最佳解</br>
    此範例是希望loss/cost function越小越好，在此我採用兩種最佳化方法</br>
@@ -121,29 +122,28 @@
    6. 執行</br>
    上述的程式除了import之外都是為了架構一個神經網路，在TensorFlow內架構好的網路，必須要有個類似啟動的方式將所有宣告的東西串起來</br>
    而且所有上面定義的東西都必須要先初始化，所以必須要執行下列程式啟動你架構好的TensorFlow NN。</br>
+
+       sess = tf.Session()
+       init = tf.global_variables_initializer()
+       sess.run(init)
+       for i in range(1000):
+         batch_xs, batch_ys = mnist.train.next_batch(1000)
+         sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys})
+         if i % 50 == 0:
+           acc = compute_accuracy(mnist.test.images, mnist.test.labels)
+           print(acc)
    
-   <code>
-        sess = tf.Session()
-        init = tf.global_variables_initializer()
-        sess.run(init)
-        for i in range(1000):
-          batch_xs, batch_ys = mnist.train.next_batch(1000)
-          sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys})
-          if i % 50 == 0:
-            acc = compute_accuracy(mnist.test.images, mnist.test.labels)
-            print(acc)
-   </code>
    </br>
    然後這邊開始執行網路學習共1000次</br>
-     mnist.train.next_batch(1000)是取1000個mini-batch出來做小批次的學習</br>
-     batch_xs為輸入的1000筆資料的值(1000,784)</br>
-     batch_ys為這1000筆資料對應的類別</br>
+   mnist.train.next_batch(1000)是取1000個mini-batch出來做小批次的學習</br>
+   batch_xs為輸入的1000筆資料的值(1000,784)</br>
+   batch_ys為這1000筆資料對應的類別</br>
     
    sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys})這邊程式讀法如下:</br>
-     sess是執行train_step這個，train_step是跑Optimizer裡面要最小化cross_entropy</br>
-     cross_entropy裡面要算ys和prediction</br>
-     ys是你學習時資料的ground truth，prediction是架構好神經網路最後一層的輸出，計算來源為xs。</br>
-     所以每一次學習指要放xs和ys這兩個東西進去train_step，他才能跑出一次完整的神經網路學習。</br>
+   sess是執行train_step這個，train_step是跑Optimizer裡面要最小化cross_entropy</br>
+   cross_entropy裡面要算ys和prediction</br>
+   ys是你學習時資料的ground truth，prediction是架構好神經網路最後一層的輸出，計算來源為xs。</br>
+   所以每一次學習指要放xs和ys這兩個東西進去train_step，他才能跑出一次完整的神經網路學習。</br>
 
    這邊供執行1000次，我這邊會放SGD和Adam在testing上的結果 </br>
    SGD:</br>
