@@ -1,6 +1,8 @@
 # Python TensorFlow 實作神經網路範例 I:
 利用TensorFlow建立DNN進行Classification</br>
 
+### [完整用TensorFlow做神經網路分類範例原始碼](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/TensorFlow/Main_tf_DNN.py) 
+
 *範例資料庫: 手寫數字辨識資料庫((MNIST))，AI大神Yann LeCun的資料庫連結: http://yann.lecun.com/exdb/mnist/</br>
   如果你沒有去下載資料庫也沒有差，TensoeFlow內有幫你載好。</br>
 
