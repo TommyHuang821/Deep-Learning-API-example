@@ -97,19 +97,20 @@
         prediction = tf_ModelAdd_layer(h2, 100, 10,  activation_function=tf.nn.softmax)
    
    4. 宣告loss/cost function的型態 </br>
-      網路建構好之後，不同於Keras那種懶人包，你必須要自己宣告你最後要讓什麼目標函數最小或是最大化，也就是loss/cost函數你想用什麼，你可以自己定義</br>在分類問題上，我們依舊用cross-entropy來當作loss/cost function (the error between prediction and real data)</br>
+   網路建構好之後，不同於Keras那種懶人包，你必須要自己宣告你最後要讓什麼目標函數最小或是最大化，也就是loss/cost函數你想用什麼，你可以自己定義</br>在分類問題上，我們依舊用cross-entropy來當作loss/cost function (the error between prediction and real data)</br>
       
-           cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction), reduction_indices=[1]))
-     
-   5. Optimizer
+       <code>cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction), reduction_indices=[1]))</code>
+     
+   </br>
+   5. Optimizer </br>
    這邊是看你要用什麼最佳化方法來達到最佳解</br>
    此範例是希望loss/cost function越小越好，在此我採用兩種最佳化方法</br>
    
-   第一Stochastic gradient descent(SGD)</br>
+     第一Stochastic gradient descent(SGD)</br>
    
        train_step = tf.train.GradientDescentOptimizer(0.1).minimize(cross_entropy)
 
-   第二個是Adam</br>
+     第二個是Adam</br>
    
        train_step =tf.train.AdamOptimizer(learning_rate=0.1,beta1=0.9,beta2=0.99,epsilon=1e-8,name="Adam").minimize(cross_entropy)
 
@@ -117,20 +118,22 @@
    但因為Adam可以解決最佳解在鞍部或是local minimum等問題，而且因為有weight decay的效果，所以通常建議用
    Adam，同樣的架構較少的iternation次數即可以達到最佳解。</br>
 
-   6. 執行
+   6. 執行</br>
    上述的程式除了import之外都是為了架構一個神經網路，在TensorFlow內架構好的網路，必須要有個類似啟動的方式將所有宣告的東西串起來</br>
    而且所有上面定義的東西都必須要先初始化，所以必須要執行下列程式啟動你架構好的TensorFlow NN。</br>
-
-         sess = tf.Session()
-         init = tf.global_variables_initializer()
-         sess.run(init)
-         for i in range(1000):
-           batch_xs, batch_ys = mnist.train.next_batch(1000)
-           sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys})
-           if i % 50 == 0:
-             acc = compute_accuracy(mnist.test.images, mnist.test.labels)
-             print(acc)
-
+   
+   <code>
+        sess = tf.Session()
+        init = tf.global_variables_initializer()
+        sess.run(init)
+        for i in range(1000):
+          batch_xs, batch_ys = mnist.train.next_batch(1000)
+          sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys})
+          if i % 50 == 0:
+            acc = compute_accuracy(mnist.test.images, mnist.test.labels)
+            print(acc)
+   </code>
+   </br>
    然後這邊開始執行網路學習共1000次</br>
      mnist.train.next_batch(1000)是取1000個mini-batch出來做小批次的學習</br>
      batch_xs為輸入的1000筆資料的值(1000,784)</br>
