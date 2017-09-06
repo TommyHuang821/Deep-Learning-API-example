@@ -31,7 +31,7 @@
 
 ----------------------------------------------------------------------------------------------------------------------------
 # 資料處理 (Python)
-### [如何資料匯入資料到python](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/Data%20Process/loaddata.md)
+### [如何將資料匯入資料到python](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/Data%20Process/loaddata.md)
 
     * 簡單的方式是用numpy匯入資料
    
