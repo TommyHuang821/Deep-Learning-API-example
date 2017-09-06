@@ -4,9 +4,9 @@
 ## 直接開始安裝步驟</br>
 
 以下會分成兩種安裝方式和驗證方式介紹:</br>
-I.	如果Python環境設定都有完成的話，基本上就直接用pip install tensorflow就可以直接取安裝tensorflow模組
-II.	如果無法用第一種方法正確安裝，可以參考別種作法
-III. 如何驗證TensorFlow是否正確安裝
+I.	如果Python環境設定都有完成的話，基本上就直接用pip install tensorflow就可以直接取安裝tensorflow模組</br>
+II.	如果無法用第一種方法正確安裝，可以參考別種作法</br>
+III. 如何驗證TensorFlow是否正確安裝</br>
 
 ## I.	如果Python環境設定都有完成的話，基本上就直接用pip install tensorflow就可以直接取安裝tensorflow模組</br>
 步驟如下: </br>
