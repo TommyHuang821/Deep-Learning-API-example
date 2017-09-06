@@ -1,3 +1,16 @@
+# 軟體安裝 (Python)
+
+### Anaconda安裝與模組更新
+* [Anaconda安裝](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/Install/1.%20%E5%AE%89%E8%A3%9DAnaconda.md)
+* [Anaconda模組更新]
+
+### TensorFlow安裝
+
+
+
+### Keras安裝
+
+
 # Deep learning開源碼操作 (Python) 
 
 ### Keras module 操作
