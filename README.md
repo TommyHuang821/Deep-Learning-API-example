@@ -8,7 +8,7 @@
 
 
 
-### Keras安裝
+### [Keras安裝](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/Install/Keras%E5%AE%89%E8%A3%9D.md)
 
 ----------------------------------------------------------------------------------------------------------------------------
 # Deep learning開源碼操作 (Python) 
