@@ -8,7 +8,7 @@ I.	如果Python環境設定都有完成的話，基本上就直接用pip install
 II.	如果無法用第一種方法正確安裝，可以參考別種作法</br>
 III. 如何驗證TensorFlow是否正確安裝</br>
 
-#[更新2017/09/08] 最新本的Anaconda，已經將Tensorflow和Keras等模組都包進去，但還沒有安裝，所以按照步驟I安裝即可，超級方便。
+# [更新2017/09/08] 最新本的Anaconda，已經將Tensorflow和Keras等模組都包進去，但還沒有安裝，所以按照步驟I安裝即可，超級方便。
 
 ## I.	如果Python環境設定都有完成的話，基本上就直接用pip install tensorflow就可以直接取安裝tensorflow模組</br>
 步驟如下: </br>
