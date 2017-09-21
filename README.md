@@ -31,8 +31,10 @@
 2. [TensorFlow範例 II (Linear Regression)](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/TensorFlow/TF%20%E7%AF%84%E4%BE%8B%20II%20(Regression).md)
 
     簡單說明如何
+    
     2.1. 操作TensorFlow建立簡單的線性回歸
-    2.2. 示範如何用最小平方法找到的唯一解去計算線性回歸
+    
+    2.2. 示範如何用最小平方法找到的唯一解去計算線性回歸
 
 ----------------------------------------------------------------------------------------------------------------------------
 # 資料處理 (Python)
