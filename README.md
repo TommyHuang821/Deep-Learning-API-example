@@ -46,7 +46,7 @@
    
         連結內有範例說明。
 
-
+### [如何從資料夾找到特定的檔案](https://github.com/TommyHuang821/Deep-Learning-API-example/blob/master/Data%20Process/FindspecificFile.ipynb)
 
 
 Note: Python 版本3.6.0,  TensorFlow 版本1.1.0,  Keras 版本 1.0.7,  numpy 版本 1.13.1
